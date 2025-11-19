@@ -1,58 +1,63 @@
 {
-    "tasks": [
-        {
-            "type": "cppbuild",
-            "label": "C/C++: Release (x64 Skylake Optimized)",
-            "command": "C:\\_main_\\msys64\\mingw64\\bin\\g++.exe",
-            "args": [
-                "-std=gnu++20",
-                "-O3",
-                "-march=skylake",
-                "-mtune=skylake",
-                "-mavx2",
-                "-mfma",
-                "-mbmi2",
-                "-pipe",
-                "-fno-exceptions",
-                "-fno-rtti",
-                "-fno-math-errno",
-                "-fomit-frame-pointer",
-                "-fstrict-aliasing",
-                "-frename-registers",
-                "-flto=auto",
-                "-fwhole-program",
-                "-fuse-linker-plugin",
-                "-funroll-loops",
-                "-fpeel-loops",
-                "-funswitch-loops",
-                "-faggressive-loop-optimizations",
-                "-ftree-vectorize",
-                "-ftree-loop-distribute-patterns",
-                "-fweb",
-                "-fgcse",
-                "-fgcse-lm",
-                "-Wl,--as-needed",
-                "-Wl,--gc-sections",
-                "-Wl,-O1",
-                //"-static",
-                //"-static-libgcc",
-                //"-static-libstdc++",
-                "-s",
-                "${workspaceFolder}\\main.cpp",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-        }
-    ],
-    "version": "2.0.0"
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: Release (x64 Skylake Optimized)",
+			"command": "C:\\_main_\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-std=gnu++20",
+				"-O3",
+				"-march=skylake",
+				"-mtune=skylake",
+				"-mavx2",
+				"-mfma",
+				"-mbmi2",
+				"-pipe",
+				"-fbuiltin",
+				"-fno-exceptions",
+				"-fno-rtti",
+				"-fno-math-errno",
+				"-fomit-frame-pointer",
+				"-fstrict-aliasing",
+				"-frename-registers",
+				"-flto=auto",
+				"-fwhole-program",
+				"-fuse-linker-plugin",
+				"-minline-all-stringops",
+				"-finline-functions",
+				"-finline-small-functions",
+				"-finline-limit=100000",
+				"-funroll-loops",
+				"-fpeel-loops",
+				"-funswitch-loops",
+				"-faggressive-loop-optimizations",
+				"-ftree-vectorize",
+				"-ftree-loop-distribute-patterns",
+				"-fweb",
+				"-fgcse",
+				"-fgcse-lm",
+				"-Wl,--as-needed",
+				"-Wl,--gc-sections",
+				"-Wl,-O1",
+				//"-static",
+				//"-static-libgcc",
+				//"-static-libstdc++",
+				"-s",
+				"${workspaceFolder}/*.cpp",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	],
+	"version": "2.0.0"
 }
